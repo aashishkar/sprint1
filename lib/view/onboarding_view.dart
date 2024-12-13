@@ -25,17 +25,18 @@ class _OnboardingPageState extends State<OnboardingPage> {
                 buildPage(
                   color: Colors.blueAccent,
                   title: 'Welcome',
-                  description: 'Welcome to HamroBooking!',
+                  description: 'Welcome to Jewelery Haven!',
                 ),
                 buildPage(
                   color: Colors.greenAccent,
-                  title: 'View Hotel',
-                  description: 'Find the perfect stay for your journey.',
+                  title: 'Explore Collections',
+                  description: 'Discover unique and exquisite ornaments.',
                 ),
                 buildPage(
                   color: Colors.purpleAccent,
-                  title: 'Get Started',
-                  description: 'Sign up or log in to begin your experience.',
+                  title: 'Shop Your Favorites',
+                  description:
+                      'Sign up or log in to begin your shopping journey.',
                 ),
               ],
             ),
@@ -69,7 +70,8 @@ class _OnboardingPageState extends State<OnboardingPage> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const LoginPage()),
+                        builder: (context) => const LoginPage(),
+                      ),
                     );
                   },
                   child: const Text(
@@ -89,7 +91,8 @@ class _OnboardingPageState extends State<OnboardingPage> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const SignupPage()),
+                        builder: (context) => const SignupPage(),
+                      ),
                     );
                   },
                   child: const Text(
@@ -106,10 +109,11 @@ class _OnboardingPageState extends State<OnboardingPage> {
     );
   }
 
-  Widget buildPage(
-      {required Color color,
-      required String title,
-      required String description}) {
+  Widget buildPage({
+    required Color color,
+    required String title,
+    required String description,
+  }) {
     return Container(
       color: color,
       child: Center(

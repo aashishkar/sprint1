@@ -23,20 +23,22 @@ class _OnboardingPageState extends State<OnboardingPage> {
               controller: _pageController,
               children: [
                 buildPage(
-                  color: Colors.blueAccent,
-                  title: 'Welcome',
-                  description: 'Welcome to Jewelery Haven!',
+                  imagePath: 'assets/images/image.png',
+                  title: 'Welcome to Jewelry Luxe',
+                  description:
+                      'Discover timeless elegance and exclusive designs.',
                 ),
                 buildPage(
-                  color: Colors.greenAccent,
+                  imagePath: 'assets/images/image.png',
                   title: 'Explore Collections',
-                  description: 'Discover unique and exquisite ornaments.',
+                  description:
+                      'Browse our exquisite range of jewelry tailored for you.',
                 ),
                 buildPage(
-                  color: Colors.purpleAccent,
+                  imagePath: 'assets/images/image.png',
                   title: 'Shop Your Favorites',
                   description:
-                      'Sign up or log in to begin your shopping journey.',
+                      'Sign up or log in to begin your luxury shopping experience.',
                 ),
               ],
             ),
@@ -45,10 +47,10 @@ class _OnboardingPageState extends State<OnboardingPage> {
           SmoothPageIndicator(
             controller: _pageController,
             count: 3,
-            effect: const WormEffect(
-              dotHeight: 12,
-              dotWidth: 12,
-              activeDotColor: Colors.deepPurpleAccent,
+            effect: const ExpandingDotsEffect(
+              dotHeight: 10,
+              dotWidth: 10,
+              activeDotColor: Colors.pinkAccent,
               dotColor: Colors.grey,
             ),
           ),
@@ -60,10 +62,10 @@ class _OnboardingPageState extends State<OnboardingPage> {
               children: [
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blueAccent,
+                    backgroundColor: Colors.pinkAccent,
                     minimumSize: const Size(140, 50),
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8),
+                      borderRadius: BorderRadius.circular(10),
                     ),
                   ),
                   onPressed: () {
@@ -81,10 +83,10 @@ class _OnboardingPageState extends State<OnboardingPage> {
                 ),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.greenAccent,
+                    backgroundColor: Colors.pinkAccent[700],
                     minimumSize: const Size(140, 50),
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8),
+                      borderRadius: BorderRadius.circular(10),
                     ),
                   ),
                   onPressed: () {
@@ -110,33 +112,44 @@ class _OnboardingPageState extends State<OnboardingPage> {
   }
 
   Widget buildPage({
-    required Color color,
+    required String imagePath,
     required String title,
     required String description,
   }) {
     return Container(
-      color: color,
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: [Colors.pinkAccent[400]!, Colors.white],
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+        ),
+      ),
       child: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Image.asset(
+              imagePath,
+              height: 150,
+            ),
+            const SizedBox(height: 20),
             Text(
               title,
               style: const TextStyle(
-                fontSize: 32,
-                color: Colors.white,
+                fontSize: 28,
+                color: Colors.black,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: 10),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 24.0),
               child: Text(
                 description,
                 textAlign: TextAlign.center,
                 style: const TextStyle(
-                  fontSize: 18,
-                  color: Colors.white,
+                  fontSize: 16,
+                  color: Colors.black54,
                 ),
               ),
             ),

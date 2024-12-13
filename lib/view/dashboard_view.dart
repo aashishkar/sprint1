@@ -8,14 +8,14 @@ class DashboardPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'Dashboard',
+          'Jewelry Shop Dashboard',
           style: TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 22,
             color: Colors.white,
           ),
         ),
-        backgroundColor: Colors.teal,
+        backgroundColor: Colors.purpleAccent,
         centerTitle: true,
         elevation: 0,
         actions: [
@@ -23,7 +23,7 @@ class DashboardPage extends StatelessWidget {
             icon: const Icon(Icons.search),
             onPressed: () {
               ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text('coming soon...')),
+                const SnackBar(content: Text('Search for jewelry...')),
               );
             },
           ),
@@ -31,7 +31,8 @@ class DashboardPage extends StatelessWidget {
             icon: const Icon(Icons.account_circle),
             onPressed: () {
               ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text('coming soon...')),
+                const SnackBar(
+                    content: Text('Account settings coming soon...')),
               );
             },
           ),
@@ -46,7 +47,10 @@ class DashboardPage extends StatelessWidget {
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [Colors.teal.shade800, Colors.teal.shade200],
+            colors: [
+              Colors.purpleAccent.shade200,
+              Colors.purpleAccent.shade100
+            ],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
           ),
@@ -58,7 +62,7 @@ class DashboardPage extends StatelessWidget {
             children: [
               const SizedBox(height: 50),
               const Text(
-                'Lets book a room!',
+                'Welcome to Our Jewelry Store!',
                 style: TextStyle(
                   fontSize: 26,
                   fontWeight: FontWeight.bold,
@@ -81,7 +85,7 @@ class DashboardPage extends StatelessWidget {
                         style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.w600,
-                          color: Colors.teal,
+                          color: Colors.purpleAccent,
                         ),
                       ),
                       const SizedBox(height: 20),
@@ -89,24 +93,24 @@ class DashboardPage extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           _dashboardButton(
-                            icon: Icons.hotel,
-                            label: 'Explore Hotels',
+                            icon: Icons.diamond,
+                            label: 'Exp Jewelry',
                             color: Colors.deepOrange,
                             onPressed: () {
                               ScaffoldMessenger.of(context).showSnackBar(
                                 const SnackBar(
-                                    content: Text('Exploring hotels...')),
+                                    content: Text('Exploring jewelry...')),
                               );
                             },
                           ),
                           _dashboardButton(
-                            icon: Icons.book_online,
-                            label: 'Book Hotel',
+                            icon: Icons.shopping_cart,
+                            label: 'Order Jewelry',
                             color: Colors.blueAccent,
                             onPressed: () {
                               ScaffoldMessenger.of(context).showSnackBar(
                                 const SnackBar(
-                                    content: Text('Proceeding to book...')),
+                                    content: Text('Proceeding to order...')),
                               );
                             },
                           ),
@@ -132,7 +136,7 @@ class DashboardPage extends StatelessWidget {
                         style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.w600,
-                          color: Colors.teal,
+                          color: Colors.purpleAccent,
                         ),
                       ),
                       const SizedBox(height: 20),
@@ -142,7 +146,7 @@ class DashboardPage extends StatelessWidget {
                           _dashboardButton(
                             icon: Icons.favorite,
                             label: 'Favorites',
-                            color: Colors.pinkAccent,
+                            color: Colors.pink,
                             onPressed: () {
                               ScaffoldMessenger.of(context).showSnackBar(
                                 const SnackBar(
@@ -152,12 +156,12 @@ class DashboardPage extends StatelessWidget {
                           ),
                           _dashboardButton(
                             icon: Icons.history,
-                            label: 'Booking History',
+                            label: 'Order History',
                             color: Colors.orange,
                             onPressed: () {
                               ScaffoldMessenger.of(context).showSnackBar(
                                 const SnackBar(
-                                    content: Text('Viewing history...')),
+                                    content: Text('Viewing order history...')),
                               );
                             },
                           ),
@@ -169,7 +173,7 @@ class DashboardPage extends StatelessWidget {
               ),
               const SizedBox(height: 30),
               const Text(
-                'Enjoy your experience!',
+                'Enjoy shopping the finest jewelry!',
                 style: TextStyle(
                   fontSize: 16,
                   fontStyle: FontStyle.italic,

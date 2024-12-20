@@ -24,3 +24,16 @@ flutter:
   assets:
     - assets/images/
     - assets/icons/
+
+  fonts:
+    - family: Montserrat Bold
+      fonts:
+        - asset: assets/fonts/Montserrat-Bold.ttf
+
+    - family: Montserrat Italic
+      fonts:
+        - asset: assets\fonts\Montserrat-Italic.ttf
+        
+    - family: Montserrat Regular
+      fonts:
+        - asset: assets\fonts\Montserrat-Regular.ttf

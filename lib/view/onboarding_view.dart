@@ -57,51 +57,33 @@ class _OnboardingPageState extends State<OnboardingPage> {
             effect: const ExpandingDotsEffect(
               dotHeight: 10,
               dotWidth: 10,
-              activeDotColor: Colors.yellowAccent,
+              activeDotColor: Colors.orange,
               dotColor: Colors.grey,
             ),
           ),
           const SizedBox(height: 20),
-          if (_currentPage < 2) ...[
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  TextButton(
-                    onPressed: () {
-                      _pageController.jumpToPage(2);
-                    },
-                    child: const Text(
-                      'Skip',
-                      style: TextStyle(
-                        color: Colors.yellowAccent,
-                        fontSize: 16,
-                      ),
-                    ),
-                  ),
-                  Row(
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            child: _currentPage < 2
+                ? Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      if (_currentPage > 0)
-                        TextButton(
-                          onPressed: () {
-                            _pageController.previousPage(
-                              duration: const Duration(milliseconds: 300),
-                              curve: Curves.easeInOut,
-                            );
-                          },
-                          child: const Text(
-                            'Back',
-                            style: TextStyle(
-                              color: Colors.yellowAccent,
-                              fontSize: 16,
-                            ),
+                      TextButton(
+                        onPressed: () {
+                          _pageController.jumpToPage(2);
+                        },
+                        child: const Text(
+                          'Skip',
+                          style: TextStyle(
+                            color: Colors.orange,
+                            fontSize: 16,
                           ),
                         ),
+                      ),
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.yellowAccent,
                           minimumSize: const Size(80, 40),
+                          backgroundColor: Colors.orange,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10),
                           ),
@@ -118,62 +100,55 @@ class _OnboardingPageState extends State<OnboardingPage> {
                         ),
                       ),
                     ],
-                  ),
-                ],
-              ),
-            ),
-          ] else ...[
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.yellowAccent,
-                      minimumSize: const Size(140, 50),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                    ),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const LoginPage(),
+                  )
+                : Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          minimumSize: const Size(140, 50),
+                          backgroundColor: Colors.orange,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
+                          ),
                         ),
-                      );
-                    },
-                    child: const Text(
-                      'Login',
-                      style: TextStyle(fontSize: 16, color: Colors.black),
-                    ),
-                  ),
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.yellowAccent[700],
-                      minimumSize: const Size(140, 50),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                    ),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const SignupPage(),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const LoginPage(),
+                            ),
+                          );
+                        },
+                        child: const Text(
+                          'Login',
+                          style: TextStyle(fontSize: 16, color: Colors.white),
                         ),
-                      );
-                    },
-                    child: const Text(
-                      'Sign Up',
-                      style: TextStyle(fontSize: 16, color: Colors.black),
-                    ),
+                      ),
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          minimumSize: const Size(140, 50),
+                          backgroundColor: Colors.orangeAccent,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                        ),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const SignupPage(),
+                            ),
+                          );
+                        },
+                        child: const Text(
+                          'Sign Up',
+                          style: TextStyle(fontSize: 16, color: Colors.white),
+                        ),
+                      ),
+                    ],
                   ),
-                ],
-              ),
-            ),
-          ],
+          ),
           const SizedBox(height: 30),
         ],
       ),
@@ -188,7 +163,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
     return Container(
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [Colors.yellowAccent[400]!, Colors.white],
+          colors: [Colors.orangeAccent, Colors.white],
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
         ),
@@ -199,7 +174,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
           children: [
             Image.asset(
               imagePath,
-              height: 150,
+              height: 200,
             ),
             const SizedBox(height: 20),
             Text(

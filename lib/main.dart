@@ -3,6 +3,6 @@ import 'package:sprint1/app.dart';
 
 void main() {
   runApp(
-    MyApp(),
+    const MyApp(),
   );
 }

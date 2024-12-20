@@ -1,5 +1,6 @@
-import 'package:sprint1/view/signup_view.dart';
 import 'package:flutter/material.dart';
+import 'package:sprint1/view/signup_view.dart';
+
 import 'dashboard_view.dart';
 
 class LoginPage extends StatelessWidget {
